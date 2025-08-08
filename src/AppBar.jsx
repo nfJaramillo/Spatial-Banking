@@ -36,13 +36,13 @@ export function AppBarTop() {
 
     // Lo siguientes 3 ajustes se pueden editar
     // Paginas que se muestran en el menu
-    const pages = ['Juego'];
+    const pages = ['Experimento'];
     // Titulo que se muestra cuando el tamaño de pantalla es de un computador
     const titulo = 'Ultimatum'
     // Titulo que se muestra cuando el tamaño de pantalla es de un celular
-    const tituloResumido = 'BASE'
+    const tituloResumido = 'Ultimatum'
     // Link base de la pagina que debe ser igual al estipulado en App.jsx
-    const linkBase = 'Ultimatum/'
+    const linkBase = '/'
 
     const navigate = useNavigate();
     const [playerNumber, setPlayerNumber] = useState(null);
@@ -154,7 +154,7 @@ export function AppBarTop() {
         if (playerNumber) {
             return `J${playerNumber}`;
         } else {
-            return "Jugador";
+            return "Conectar";
         }
     };
 
@@ -221,11 +221,56 @@ export function AppBarTop() {
                                 onClose={() => handleCloseNavMenu("")}
                                 sx={{
                                     display: { xs: 'block', md: 'none' },
+                                    '& .MuiPaper-root': {
+                                        borderRadius: 3,
+                                        boxShadow: '0 8px 24px rgba(0, 0, 0, 0.15)',
+                                        border: '1px solid rgba(0, 0, 0, 0.08)',
+                                        minWidth: '200px',
+                                        mt: 1,
+                                        backdropFilter: 'blur(10px)',
+                                        backgroundColor: 'rgba(255, 255, 255, 0.95)'
+                                    },
+                                    '& .MuiList-root': {
+                                        py: 1
+                                    }
                                 }}
                             >
                                 {pages.map((page) => (
-                                    <MenuItem key={page} onClick={() => handleCloseNavMenu(page)} autoFocus >
-                                        <Typography textAlign="center">{page}</Typography>
+                                    <MenuItem 
+                                        key={page} 
+                                        onClick={() => handleCloseNavMenu(page)} 
+                                        autoFocus
+                                        sx={{
+                                            py: 2.5,
+                                            px: 3,
+                                            borderRadius: 2,
+                                            mx: 1.5,
+                                            my: 1,
+                                            transition: 'all 0.3s cubic-bezier(0.4, 0, 0.2, 1)',
+                                            position: 'relative',
+                                            overflow: 'hidden',
+                                            '&:hover': {
+                                                bgcolor: 'primary.main',
+                                                color: 'white',
+                                                transform: 'translateY(-2px) scale(1.02)',
+                                                boxShadow: '0 4px 12px rgba(0, 0, 0, 0.15)',
+                                            },
+                                            '&:active': {
+                                                transform: 'translateY(0) scale(0.98)'
+                                            }
+                                        }}
+                                    >
+                                        <Typography 
+                                            textAlign="center" 
+                                            sx={{ 
+                                                fontWeight: 700,
+                                                fontSize: { xs: '1rem', sm: '1.1rem' },
+                                                letterSpacing: '0.5px',
+                                                textTransform: 'uppercase'
+                                            }}
+                                        >
+                                            {page}
+                                        </Typography>
                                     </MenuItem>
                                 ))}
                             </Menu>
@@ -240,11 +285,12 @@ export function AppBarTop() {
                                 mr: 2,
                                 display: { xs: 'flex', md: 'none' },
                                 flexGrow: 1,
-                                fontFamily: 'monospace',
+                                fontFamily: 'Nunito',
                                 fontWeight: 700,
-                                letterSpacing: '.3rem',
+                                letterSpacing: { xs: '.1rem', sm: '.2rem' },
                                 color: 'inherit',
                                 textDecoration: 'none',
+                                fontSize: { xs: '1rem', sm: '1.25rem' },
                             }}
                         >
                             {tituloResumido}
@@ -253,10 +299,36 @@ export function AppBarTop() {
                             {pages.map((page) => (
                                 <Button
                                 component={ReactNav}
-                                to={"Ultimatum/"+page.toLowerCase()}
+                                to={"/"+page.toLowerCase()}
                                     key={page}
                                     onClick={() => handleCloseNavMenu(page)}
-                                    sx={{mr: 1, my: 2, color: 'white', active:'true', display: 'block', '&:hover': {bgcolor: 'white', color: 'black'},'&.active': {bgcolor: 'white', color: 'black'}}}
+                                    sx={{
+                                        mr: 1, 
+                                        my: 2, 
+                                        color: 'white', 
+                                        display: 'block',
+                                        border: '1px solid rgba(255, 255, 255, 0.3)',
+                                        borderRadius: 2,
+                                        px: 3,
+                                        py: 1,
+                                        textTransform: 'none',
+                                        fontWeight: 600,
+                                        cursor: 'pointer',
+                                        transition: 'all 0.3s ease',
+                                        boxShadow: '0 2px 4px rgba(0, 0, 0, 0.1)',
+                                        '&:hover': {
+                                            bgcolor: 'white', 
+                                            color: 'black',
+                                            transform: 'translateY(-2px)',
+                                            boxShadow: '0 4px 8px rgba(0, 0, 0, 0.2)',
+                                            border: '1px solid white'
+                                        },
+                                        '&.active': {
+                                            bgcolor: 'white', 
+                                            color: 'black',
+                                            border: '1px solid white'
+                                        }
+                                    }}
                                 >
                                     {page}
                                 </Button>
@@ -270,7 +342,22 @@ export function AppBarTop() {
                                 onClick={handlePlayerButtonPressed} 
                                 disabled={isLoading}
                                 color={playerNumber ? "primary" : "yellow"} 
-                                sx={{ backgroundColor: playerNumber ? '#00C587' : '#FCDB25' }}
+                                sx={{ 
+                                    backgroundColor: playerNumber ? '#00C587' : '#FCDB25',
+                                    borderRadius: 2,
+                                    px: 3,
+                                    py: 1.5,
+                                    fontWeight: 600,
+                                    boxShadow: '0 2px 4px rgba(0, 0, 0, 0.2)',
+                                    transition: 'all 0.3s ease',
+                                    '&:hover': {
+                                        transform: 'translateY(-2px)',
+                                        boxShadow: '0 4px 8px rgba(0, 0, 0, 0.3)',
+                                    },
+                                    '&:disabled': {
+                                        opacity: 0.7
+                                    }
+                                }}
                             >
                                 {getButtonText()}
                             </Button>
@@ -283,7 +370,31 @@ export function AppBarTop() {
                                 onClick={handlePlayerButtonPressed} 
                                 disabled={isLoading}
                                 color={playerNumber ? "primary" : "yellow"} 
-                                sx={{ backgroundColor: playerNumber ? '#00C587' : '#FCDB25' }}
+                                sx={{ 
+                                    backgroundColor: playerNumber ? '#00C587' : '#FCDB25',
+                                    borderRadius: 3,
+                                    px: { xs: 2, sm: 2.5 },
+                                    py: { xs: 1.2, sm: 1.5 },
+                                    minWidth: { xs: '85px', sm: '95px' },
+                                    minHeight: { xs: '44px', sm: '48px' }, // Mejor área táctil
+                                    fontWeight: 700,
+                                    fontSize: { xs: '0.8rem', sm: '0.875rem' },
+                                    boxShadow: '0 3px 6px rgba(0, 0, 0, 0.25)',
+                                    transition: 'all 0.3s cubic-bezier(0.4, 0, 0.2, 1)',
+                                    textTransform: 'none',
+                                    '&:hover': {
+                                        transform: 'translateY(-2px)',
+                                        boxShadow: '0 6px 12px rgba(0, 0, 0, 0.35)',
+                                    },
+                                    '&:active': {
+                                        transform: 'translateY(0)',
+                                        boxShadow: '0 2px 4px rgba(0, 0, 0, 0.2)',
+                                    },
+                                    '&:disabled': {
+                                        opacity: 0.7,
+                                        transform: 'none'
+                                    }
+                                }}
                             >
                                 {getButtonTextMobile()}
                             </Button>
