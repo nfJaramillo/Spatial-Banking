@@ -14,7 +14,7 @@ const Home = () => {
                 bgcolor: '#cfe8fc', 
                 minHeight: '80vh', 
                 borderRadius: 1, 
-                mt: 3, 
+                mt: { xs: 1, md: 3 }, 
                 background: 'linear-gradient(to bottom, #F8F8F8, #FFFFFF)',
                 boxShadow: { xs: '0 4px 12px rgba(0, 0, 0, 0.1)', md: '0 8px 24px rgba(0, 0, 0, 0.12)' },
                 overflow: 'hidden'
@@ -26,8 +26,8 @@ const Home = () => {
                 md={6}
                 sx={{ 
                     order: { xs: 2, md: 1 },
-                    px: { xs: 2, sm: 3, md: 4 },
-                    py: { xs: 2, md: 3 },
+                    px: { xs: 1, sm: 2, md: 4 },
+                    py: { xs: 1.5, md: 3 },
                     textAlign: { xs: 'center', md: 'left' }
                 }}
             >

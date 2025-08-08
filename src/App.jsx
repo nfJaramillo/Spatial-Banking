@@ -36,7 +36,11 @@ const App = () => {
     <AppContext.Provider value={alert}>
       <ThemeProvider theme={theme}>
         <CssBaseline />
-        <div className="App" style={{ paddingLeft: '24px', paddingRight: '24px', paddingTop: '16px' }}>
+        <div className="App" style={{ 
+          paddingLeft: window.innerWidth <= 768 ? '8px' : '24px', 
+          paddingRight: window.innerWidth <= 768 ? '8px' : '24px', 
+          paddingTop: '16px' 
+        }}>
           <AppBarTop />
           <Routes>
             <Route exact path="/" element={<Home />} />

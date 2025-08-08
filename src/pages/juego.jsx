@@ -272,30 +272,31 @@ const Juego = () => {
                 display: 'flex', 
                 alignItems: 'center', 
                 bgcolor: '#cfe8fc', 
-                minHeight: { xs: '90vh', md: '85vh' }, 
+                minHeight: { xs: 'calc(100vh - 80px)', md: '85vh' }, 
+                maxHeight: { xs: 'calc(100vh - 80px)', md: 'none' },
                 borderRadius: 1, 
-                mt: 3, 
+                mt: { xs: 1, md: 3 }, 
                 background: 'linear-gradient(to bottom, #F8F8F8, #FFFFFF)',
-                p: { xs: 1.5, md: 2 },
+                p: { xs: 0.5, md: 2 },
                 overflow: 'hidden'
             }}
         >
-            <Grid container spacing={{ xs: 1, md: 1.5 }} sx={{ height: '100%', maxWidth: '100%' }}>
+            <Grid container spacing={{ xs: 0.5, md: 1.5 }} sx={{ height: '100%', maxWidth: '100%' }}>
                 {/* Título Principal */}
                 <Grid item xs={12}>
                     <Card sx={{ 
                         background: `linear-gradient(135deg, ${COLORS.BANCOLOMBIA.DARK} 0%, #1a1918 100%)`, 
                         color: COLORS.BANCOLOMBIA.LIGHT,
                         textAlign: 'center',
-                        py: { xs: 1, md: 1.5 },
+                        py: { xs: 0.5, md: 1.5 },
                         borderRadius: 2,
                         boxShadow: '0 2px 8px rgba(44, 42, 41, 0.2)'
                     }}>
                         <Typography variant="h4" component="h1" sx={{ 
                             fontWeight: 'bold',
-                            fontSize: { xs: '1.3rem', sm: '1.5rem', md: '1.8rem' },
+                            fontSize: { xs: '1.1rem', sm: '1.3rem', md: '1.8rem' },
                             textShadow: '2px 2px 4px rgba(0,0,0,0.3)',
-                            mb: 0.3
+                            mb: 0.2
                         }}>
                             Jugador {playerNumber}
                         </Typography>
@@ -303,7 +304,7 @@ const Juego = () => {
                             color: COLORS.BANCOLOMBIA.YELLOW,
                             fontWeight: 500,
                             opacity: 0.9,
-                            fontSize: { xs: '0.8rem', md: '0.9rem' }
+                            fontSize: { xs: '0.7rem', md: '0.9rem' }
                         }}>
                             El juego del ultimátum
                         </Typography>
@@ -318,16 +319,16 @@ const Juego = () => {
                                          getEstadoMessage.color === 'error' ? COLORS.BANCOLOMBIA.ORANGE : COLORS.BANCOLOMBIA.BLUE,
                         borderRadius: 2,
                         textAlign: 'center',
-                        py: { xs: 0.8, md: 1 },
+                        py: { xs: 0.5, md: 1 },
                         boxShadow: '0 2px 8px rgba(0,0,0,0.1)',
                         border: '1px solid rgba(255,255,255,0.2)'
                     }}>
                         <Typography variant="body1" sx={{ 
                             fontWeight: 'bold',
                             color: getEstadoMessage.color === 'warning' ? COLORS.BANCOLOMBIA.DARK : COLORS.BANCOLOMBIA.LIGHT,
-                            mb: 0.5,
+                            mb: 0.3,
                             textShadow: getEstadoMessage.color === 'warning' ? 'none' : '1px 1px 2px rgba(0,0,0,0.3)',
-                            fontSize: { xs: '0.85rem', md: '1rem' }
+                            fontSize: { xs: '0.75rem', md: '1rem' }
                         }}>
                             {getEstadoMessage.text}
                         </Typography>
@@ -356,7 +357,7 @@ const Juego = () => {
 
                 {/* Cuentas - Layout responsivo mejorado */}
                 <Grid item xs={12} sx={{ flexGrow: 1, display: 'flex' }}>
-                    <Grid container spacing={{ xs: 1, md: 1.5 }} sx={{ height: '100%' }}>
+                    <Grid container spacing={{ xs: 0.5, md: 1.5 }} sx={{ height: '100%' }}>
                         {/* Cuenta de Ahorros */}
                         <Grid item xs={12} sm={6} md={4}>
                             <Card sx={{ 
@@ -378,21 +379,21 @@ const Juego = () => {
                                     flexDirection: 'column',
                                     alignItems: 'center',
                                     textAlign: 'center',
-                                    py: { xs: 1, md: 1.5 },
-                                    px: { xs: 1, md: 1.5 },
+                                    py: { xs: 0.5, md: 1.5 },
+                                    px: { xs: 0.5, md: 1.5 },
                                     flexGrow: 1,
                                     justifyContent: 'space-between'
                                 }}>
                                     <Box sx={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
                                         <Box sx={{
-                                            width: { xs: 30, md: 35 },
-                                            height: { xs: 30, md: 35 },
+                                            width: { xs: 24, md: 35 },
+                                            height: { xs: 24, md: 35 },
                                             borderRadius: '50%',
                                             backgroundColor: COLORS.BANCOLOMBIA.GREEN,
                                             display: 'flex',
                                             alignItems: 'center',
                                             justifyContent: 'center',
-                                            mb: { xs: 0.5, md: 1 }
+                                            mb: { xs: 0.3, md: 1 }
                                         }}>
                                             <Typography variant="body1" sx={{ 
                                                 color: COLORS.BANCOLOMBIA.LIGHT, 
@@ -465,21 +466,21 @@ const Juego = () => {
                                     flexDirection: 'column',
                                     alignItems: 'center',
                                     textAlign: 'center',
-                                    py: { xs: 1, md: 1.5 },
-                                    px: { xs: 1, md: 1.5 },
+                                    py: { xs: 0.5, md: 1.5 },
+                                    px: { xs: 0.5, md: 1.5 },
                                     flexGrow: 1,
                                     justifyContent: 'space-between'
                                 }}>
                                     <Box sx={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
                                         <Box sx={{
-                                            width: { xs: 30, md: 35 },
-                                            height: { xs: 30, md: 35 },
+                                            width: { xs: 24, md: 35 },
+                                            height: { xs: 24, md: 35 },
                                             borderRadius: '50%',
                                             backgroundColor: COLORS.BANCOLOMBIA.ORANGE,
                                             display: 'flex',
                                             alignItems: 'center',
                                             justifyContent: 'center',
-                                            mb: { xs: 0.5, md: 1 }
+                                            mb: { xs: 0.3, md: 1 }
                                         }}>
                                             <Typography variant="body1" sx={{ 
                                                 color: COLORS.BANCOLOMBIA.LIGHT, 
@@ -552,21 +553,21 @@ const Juego = () => {
                                     flexDirection: 'column',
                                     alignItems: 'center',
                                     textAlign: 'center',
-                                    py: { xs: 1, md: 1.5 },
-                                    px: { xs: 1, md: 1.5 },
+                                    py: { xs: 0.5, md: 1.5 },
+                                    px: { xs: 0.5, md: 1.5 },
                                     flexGrow: 1,
                                     justifyContent: 'space-between'
                                 }}>
                                     <Box sx={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
                                         <Box sx={{
-                                            width: { xs: 30, md: 35 },
-                                            height: { xs: 30, md: 35 },
+                                            width: { xs: 24, md: 35 },
+                                            height: { xs: 24, md: 35 },
                                             borderRadius: '50%',
                                             background: `linear-gradient(135deg, ${COLORS.BANCOLOMBIA.PINK} 0%, ${COLORS.BANCOLOMBIA.ORANGE} 100%)`,
                                             display: 'flex',
                                             alignItems: 'center',
                                             justifyContent: 'center',
-                                            mb: { xs: 0.5, md: 1 }
+                                            mb: { xs: 0.3, md: 1 }
                                         }}>
                                             <Typography variant="body1" sx={{ 
                                                 color: COLORS.BANCOLOMBIA.LIGHT, 
@@ -627,19 +628,19 @@ const Juego = () => {
                         borderRadius: 2,
                         boxShadow: '0 2px 8px rgba(0,0,0,0.06)',
                         border: `2px solid ${COLORS.BANCOLOMBIA.YELLOW}`,
-                        py: { xs: 1, md: 1.5 },
-                        px: { xs: 1, md: 2 }
+                        py: { xs: 0.5, md: 1.5 },
+                        px: { xs: 0.5, md: 2 }
                     }}>
                         <Typography variant="body1" sx={{ 
                             textAlign: 'center', 
-                            mb: { xs: 1, md: 1.5 }, 
+                            mb: { xs: 0.5, md: 1.5 }, 
                             fontWeight: 'bold',
                             color: COLORS.BANCOLOMBIA.DARK,
-                            fontSize: { xs: '0.9rem', md: '1rem' }
+                            fontSize: { xs: '0.8rem', md: '1rem' }
                         }}>
                             ¿Qué decides hacer?
                         </Typography>
-                        <Grid container spacing={{ xs: 1, md: 2 }}>
+                        <Grid container spacing={{ xs: 0.5, md: 2 }}>
                             <Grid item xs={12} md={6}>
                                 <Button
                                     variant="contained"
