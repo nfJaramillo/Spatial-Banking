@@ -10,7 +10,7 @@
 
 // === CONFIGURACIÓN DE API ===
 export const API_CONFIG = {
-  BASE_URL: 'https://api.airpipe.io/a4d6a178-9eae-45db-8f00-aa70be9e438f/production',
+  BASE_URL: 'https://p50iej58p2.execute-api.us-east-2.amazonaws.com/prod',
   TIMEOUT: 10000, // 10 segundos timeout para requests
   RETRY_ATTEMPTS: 3
 };

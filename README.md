@@ -15,7 +15,7 @@ Esta aplicación permite a múltiples jugadores participar en el juego del ultim
 - **Polling inteligente** para actualizaciones en tiempo real
 
 ### Backend
-- **API REST** hospedada en Airpipe
+- **API REST** hospedada en AWS API Gateway
 - **MongoDB Atlas** como base de datos
 - **Endpoints RESTful** para manejo de jugadores y ofertas
 
@@ -52,7 +52,7 @@ npm run dev
 ### Variables de Entorno
 La aplicación utiliza una API configurada en:
 ```
-API_BASE_URL = 'https://api.airpipe.io/a4d6a178-9eae-45db-8f00-aa70be9e438f/production'
+API_BASE_URL = 'https://p50iej58p2.execute-api.us-east-2.amazonaws.com/prod'
 ```
 
 ## 🎯 Uso de la Aplicación
