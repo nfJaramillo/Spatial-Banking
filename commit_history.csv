@@ -1,0 +1,6 @@
+ID,Autor,Commit,Fecha
+1,dependabot[bot],"build(deps): bump github/codeql-action/init from 4.37.4 to 4.37.6 (#940)",2026-08-08
+2,dependabot[bot],"build(deps): bump github/codeql-action/upload-sarif (#942)",2026-08-08
+3,app-toolkit-opensource-innersource[bot],"build(deps): update dependencies (#908)",2026-08-08
+4,dependabot[bot],"build(deps): bump dorny/paths-filter from 4.0.2 to 4.0.3 (#947)",2026-08-10
+5,luisgomez29,"chore: Update Pitest configuration and dependency versions (#948)",2026-08-12
